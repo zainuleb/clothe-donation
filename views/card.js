@@ -7,11 +7,9 @@ const elements = stripe.elements();
 var style = {
   base: {
     color: '#32325d',
-    padding: '0.75rem',
     fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
     fontSmoothing: 'antialiased',
     fontSize: '16px',
-    margin: '10px 0px',
   },
 };
 
