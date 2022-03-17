@@ -65,20 +65,20 @@ const mailingConfirmation = async (data) => {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'p166024@nu.edu.pk',
-      pass: '!2For4nicate7?',
+      user: 'yourEmail',
+      pass: 'yourpassword',
     },
   });
 
   var mailOptions = {
-    from: 'p166024@nu.edu.pk',
+    from: 'yourEmail',
     to: data.email,
     subject: 'Donation Confirmation Email',
     text: 'Find Your Recipt below',
     attachments: [
       {
         filename: `${data.email}.pdf`,
-        path: `C:/Users/Eb/Desktop/xx/${data.email}.pdf`,
+        path: `C:/Users/Eb/Desktop/fiverCode/${data.email}.pdf`,
         contentType: 'application/pdf',
       },
     ],
@@ -87,6 +87,7 @@ const mailingConfirmation = async (data) => {
   await pdf
     .create(document, options)
     .then((res) => {
+      setTimeout(() => {}, 2000);
       transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
           console.log(error);
